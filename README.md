@@ -6,9 +6,7 @@ More info at http://mikeeverhart.net/php-flash-messages.
 
 ## Notice
 
-This is a new version of https://github.com/plasticbrain/php-flash-messages-legacy. This updated version has been completely rewritten, and therefore **is not compatible with the original version**!
-
-Thank you to everyone that used the old version, and especially to those that left feedback and recommendations!
+This is a new version of https://github.com/plasticbrain/PhpFlashMessages with minor updates.
 
 ## Features
 
