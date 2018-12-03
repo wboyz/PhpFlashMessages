@@ -257,6 +257,61 @@ class FlashMessages {
         }
         return false;
     }
+    
+        /**
+     * @param null $type
+     * @return array
+     */
+    public function getMessages($type = null)
+    {
+        if (!isset($_SESSION['flash_messages'])) {
+            return [];
+        }
+        if (isset($type) &&
+            (!isset($_SESSION['flash_messages'][$type]) || empty($_SESSION['flash_messages'][$type]))
+        ) {
+            return [];
+        }
+        if (isset($type) && !empty($type)) {
+            $msgData = $_SESSION['flash_messages'][$type];
+        } else {
+            return $_SESSION['flash_messages'];
+        }
+        return $msgData;
+    }
+    
+    /**
+     * Get the error messages without clear.
+     */
+    pulbic function getErrors()
+    {
+        return $this->getMessages(self::ERROR);
+    }
+    
+    /**
+     * Get the warning messages without clear.
+     */
+    pulbic function getWarnings()
+    {
+        return $this->getMessages(self::WARNING);
+    }
+    
+    /**
+     * Get the info messages without clear.
+     */
+    pulbic function getInfos()
+    {
+        return $this->getMessages(self::INFO);
+    }
+    
+        
+    /**
+     * Get the success messages without clear.
+     */
+    pulbic function getSuccesses()
+    {
+        return $this->getMessages(self::SUCCESS);
+    }
 
     /**
      * Format a message
